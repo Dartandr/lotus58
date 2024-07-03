@@ -4,11 +4,11 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
-        KC_GRV,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_NO,        KC_MPLY, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
+        KC_GRV,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_NO,        KC_MPLY,   KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
         KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC,
         KC_LSFT,   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                             KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-        KC_LCTL, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_EQL,        KC_RBRC,   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
-                                   KC_LGUI, MO(1),   KC_LALT, KC_SPC, KC_SPC,   KC_BSPC, MO(2), MO(3)
+        KC_LCTL,   KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_EQL,        KC_RBRC,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
+                                     KC_LGUI, MO(1),   KC_LALT, KC_SPC,        KC_SPC,   KC_BSPC, TG(2),   MO(3)
     ),
 
     [1] = LAYOUT(
@@ -20,16 +20,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [2] = LAYOUT(
-        _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   _______,        _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,
-        _______, _______, _______, _______, _______, _______,                          _______, _______, KC_UP,   _______, _______, _______,
-        _______, _______, _______, _______, _______, _______,                          _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,
+        KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   _______,        _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,   KC_F11,  KC_F12,
+        _______, _______, _______, _______, _______, _______,                          KC_PGUP, KC_HOME, KC_UP,   KC_END,  _______, _______,
+        _______, _______, _______, _______, _______, _______,                          KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,
         _______, _______, _______, _______, _______, _______, _______,        _______, _______, _______, _______, _______, _______, _______,
                                             _______, _______, _______,        _______, _______, _______, _______, _______
     ),
 
     [3] = LAYOUT(
         QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, NK_TOGG, AC_TOGG, _______,        _______, XXXXXXX, XXXXXXX, XXXXXXX, RGB_MOD, RGB_SAI, RGB_TOG,
-        QK_RBT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                          XXXXXXX, XXXXXXX, XXXXXXX, RGB_RMOD,RGB_SAD, RGB_M_P,
+        QK_RBT,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                          XXXXXXX, XXXXXXX, XXXXXXX, RGB_RMOD,RGB_SAD, RGB_M_P,
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_CAPS,                          XXXXXXX, XXXXXXX, XXXXXXX, RGB_HUI, RGB_VAI, RGB_M_B,
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_HUD, RGB_VAD, RGB_M_R,
                                    _______, _______, _______, _______,        _______, _______, _______, _______ 
@@ -213,16 +213,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 
-static const char logo [] PROGMEM = {
-			0x00, 0x00, 0x00, 0xc0, 0xe0, 0xf0, 0xf8, 0xf8, 0xfc, 0x7e, 0xfe, 0xfe, 0xff, 0xff, 0x7f, 0x7f, 
-			0xff, 0xff, 0xff, 0xff, 0xfe, 0xfe, 0xfe, 0xfc, 0xfc, 0xf8, 0xf0, 0xe0, 0xc0, 0x80, 0x00, 0x00, 
-			0xf0, 0xfe, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xe0, 0x00, 0x04, 0x60, 0x04, 0x04, 0x00, 0x00, 
-			0x3f, 0x3f, 0x1f, 0x0f, 0x07, 0x07, 0x0f, 0x8f, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xfe, 0xf0, 
-			0x0f, 0x7f, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xfc, 0x00, 0x00, 0xe0, 0x00, 0x00, 0xf0, 
-			0xf0, 0xf0, 0x00, 0x00, 0xc0, 0xe0, 0x00, 0x8f, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x7f, 0x0f, 
-			0x00, 0x00, 0x00, 0x03, 0x07, 0x0f, 0x1f, 0x1f, 0x3f, 0x7f, 0x7e, 0x7e, 0xff, 0xfe, 0xfe, 0xff, 
-			0xff, 0xff, 0xff, 0xff, 0x7f, 0x7e, 0x7e, 0x3f, 0x3f, 0x1f, 0x0f, 0x07, 0x03, 0x01, 0x00, 0x00
-			};
+// static const char logo [] PROGMEM = {
+// 			0x00, 0x00, 0x00, 0xc0, 0xe0, 0xf0, 0xf8, 0xf8, 0xfc, 0x7e, 0xfe, 0xfe, 0xff, 0xff, 0x7f, 0x7f, 
+// 			0xff, 0xff, 0xff, 0xff, 0xfe, 0xfe, 0xfe, 0xfc, 0xfc, 0xf8, 0xf0, 0xe0, 0xc0, 0x80, 0x00, 0x00, 
+// 			0xf0, 0xfe, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xe0, 0x00, 0x04, 0x60, 0x04, 0x04, 0x00, 0x00, 
+// 			0x3f, 0x3f, 0x1f, 0x0f, 0x07, 0x07, 0x0f, 0x8f, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xfe, 0xf0, 
+// 			0x0f, 0x7f, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xfc, 0x00, 0x00, 0xe0, 0x00, 0x00, 0xf0, 
+// 			0xf0, 0xf0, 0x00, 0x00, 0xc0, 0xe0, 0x00, 0x8f, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x7f, 0x0f, 
+// 			0x00, 0x00, 0x00, 0x03, 0x07, 0x0f, 0x1f, 0x1f, 0x3f, 0x7f, 0x7e, 0x7e, 0xff, 0xfe, 0xfe, 0xff, 
+// 			0xff, 0xff, 0xff, 0xff, 0x7f, 0x7e, 0x7e, 0x3f, 0x3f, 0x1f, 0x0f, 0x07, 0x03, 0x01, 0x00, 0x00
+// 			};
 
 static void print_status_narrow(void) {
 
@@ -235,7 +235,7 @@ static void print_status_narrow(void) {
             oled_write_P(PSTR("func"), false);
             break;
         case 2:
-            oled_write_P(PSTR("__3__"), false);
+            oled_write_P(PSTR("arrow"), false);
             break;
         case 3:
             oled_write_P(PSTR("light"), false);
@@ -249,23 +249,25 @@ static void print_status_narrow(void) {
 bool oled_task_user(void) {
 	current_wpm   = get_current_wpm();
 	if (is_keyboard_master()) {
-		oled_set_cursor(0, 0);
-		oled_write_raw_P(logo, sizeof(logo));
+		oled_set_cursor(1, 0);
+		// oled_write_raw_P(logo, sizeof(logo));
+        oled_write("", false);
+
 		/* wpm counter */
 		uint8_t n = get_current_wpm();
 		char    wpm_str[4];
-		oled_set_cursor(1, 5);
+		// oled_set_cursor(1, 5);
 		wpm_str[3] = '\0';
 		wpm_str[2] = '0' + n % 10;
 		wpm_str[1] = '0' + (n /= 10) % 10;
 		wpm_str[0] = '0' + n / 10;
 		oled_write(wpm_str, false);
-		oled_set_cursor(1, 6);
+		oled_set_cursor(1, 2);
 		oled_write("wpm", false);
 		oled_set_cursor(0, 7);
 		print_status_narrow();
         oled_write("   \n", false);
-        oled_write("Hello", false);
+        oled_write("Doggo", false);
 
 		
 		//luna
